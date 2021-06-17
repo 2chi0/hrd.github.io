@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+<section class="fdb-block pt-5 pb-2">
+<div class="container">
+  <div class="articles row row-cols-1 row-cols-lg-3">
+    {{ range after 0 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+        <div class="col mb-3">
+            {{ .Render "card" }}
+        </div>
+    {{ end }}
+    </div>
+</div>
+</section>
+
+{{ end }}
